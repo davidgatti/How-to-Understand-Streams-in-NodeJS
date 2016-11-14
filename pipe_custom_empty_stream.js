@@ -45,8 +45,9 @@ function OurDataManipulation () {
 }
 
 //
-//	Create our custom Transform where we are going to process
-//	the data that comes in.
+//	Create our custom stream that in this case doesn't do anything, it just
+//	shows what is the bare minimum needed to make a stream from scratch and
+//	pass the data to the next pipe.
 //
 OurDataManipulation.prototype._transform = function (line, encoding, processed) {
 
