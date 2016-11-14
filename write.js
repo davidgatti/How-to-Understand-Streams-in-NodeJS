@@ -11,7 +11,7 @@ let options = {
 //
 //	Create a file and set on it some good options
 //
-let file = fs.createWriteStream('./file.txt', options);
+let file = fs.createWriteStream('./x_file.txt', options);
 
 //
 //	Execute the function that writes data in to the file.
