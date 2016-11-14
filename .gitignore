@@ -38,3 +38,5 @@ jspm_packages
 /file.txt
 /.DS_Store
 /file.gz
+/x_file.txt
+/k_file.txt
