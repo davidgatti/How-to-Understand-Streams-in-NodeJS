@@ -1,12 +1,12 @@
 let fs = require('fs');
+let util = require("util");
 let stream = require('stream');
-var Transform = require("stream").Transform;
-var util = require("util");
+let Transform = require("stream").Transform;
 
 //
 //	Inherit Transform
 //
-util.inherits(OurDataManipulation, Transform);
+util.inherits(OurStream, Transform);
 
 //
 //	Options
@@ -36,7 +36,7 @@ let to_compressed_file = fs.createWriteStream('./semicolon_file.txt', options_co
 //
 //	Create our custom stream processor
 //
-function OurDataManipulation () {
+function OurStream () {
 
 	//
 	// invoke Transform constructor
@@ -49,33 +49,33 @@ function OurDataManipulation () {
 //	shows what is the bare minimum needed to make a stream from scratch and
 //	pass the data to the next pipe.
 //
-OurDataManipulation.prototype._transform = function (line, encoding, processed) {
+OurStream.prototype._transform = function (buffer, encoding, callback) {
 
-	// 2C > 3B
-
-
-	for (let i = 0; i < line.length ; i++)
+	//
+	//	Loop over the buffer looking for ',' and replacing it with ';', which
+	//	in ASCII ',' is 44 and ';' is 59
+	//
+	for (let i = 0; i < buffer.length ; i++)
 	{
-		if(line[i] == 44)
+		if(buffer[i] == 44)
 		{
-			line[i] = 59
+			buffer[i] = 59
 		}
 	}
-
 
 	//
 	//	Add the data that came in, to the output stream
 	//
-	this.push(line);
+	this.push(buffer);
 
 	//
-	//	We let system know that we finished processing the data.
+	//	Pass the chunk of processed data to the next potential stream
 	//
-    processed();
+    callback();
 
 }
 
 //
 //	Pipe
 //
-raw_file.pipe(new OurDataManipulation()).pipe(to_compressed_file);
+raw_file.pipe(new OurStream()).pipe(to_compressed_file);
