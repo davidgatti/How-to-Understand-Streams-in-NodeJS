@@ -1,2 +1,1 @@
-# Understanding-Buffers-in-NodeJS
-🚰 A step by step explanation how to take advantage of Buffers in NodeJS
+# Read a file as a stream in NodeJS

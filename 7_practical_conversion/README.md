@@ -1,4 +1,4 @@
-# Changing a file with a custom Stream
+# How to manipulate a stream in NodeJS
 
 In this folder you'll find the end result of what we learned in this article. Hear you'll find two main files:
 
