@@ -1,14 +1,12 @@
 # Understanding Buffers in NodeJS
 
-This is another article in a series of demystifying big words in computer programming. And the next word is Streams.
-
-The good thing is that they are very simple to understand and thus this article is going way shorter then the previous ones.
+This is another article in a series of articles where I try to demystify big words in computer programming. And the next big word that I want to tackle is the Streams concept.
 
 # What is a Stream
 
-Before we move to some code, lets answer the basic questions, what is a Stream... a stream is a "infinite" flow of data. It is the opposite to an array for example, where an array have a predefined size. You can add new elements to an array, but you can always ask how many of them there are. Where with a stream you can't even if you know the size.
+Before we move to some code, lets answer the basic questions, what is a Stream... a stream is a "infinite" flow of data. For example, it is the opposite to an array, where an array have a predefined size. You can add new elements to an array, but you can always ask how many of them there are. Where with a stream you don't know when the data will stop flowing.
 
-Say what? you know the size but you can't query for it?
+# If reading a file is a stream, then I know the size.
 
 Lets put it differently: when you open a stream, you are going to work with small chunks of data. For example in my case, with NodeJS under macOS it is around 65,536 bytes. If you open a file that is for example 1GB of data. your code will actually process 65,536 bytes at the time. The whole file won't be loaded in memory.
 
@@ -44,6 +42,16 @@ Imagine that you have two hard drive, one has a 100GB file, the other have 100GB
 Loading 100GB in to memory on your laptop would be unfeasible. I for example have 8GB of ram. We can solve the problem with Streams. Because instead of loading the whole thing in to memory, the system will load the log file chunk by chunk. So know you have to deal only with 70KB of data at the time.
 
 Basically your laptop is just a proxy that manipulates the data and dumps the result in another place. Thus making it possible to do work otherwise impossible.
+
+# Code Brake Down
+
+1. **read_from_stream**: simple example to show how to open a file and read its content
+1. **write_to_stream**: simple example to show how to write to a file
+1. **compress_a_stream**: simple example to show how to compress data that is streaming
+1. **empty_custom_stream**: hear we create our won stream implementation
+1. **nonempty_custom_stream**: hear we make our custom stream implementation actually do something
+1. **pause_a_stream**: hear we learn how we can pause a stream and resume it course
+1. **practical_conversion**: in the final example we are going to change the original file and save it in to a new one.
 
 # To sum it all up
 
