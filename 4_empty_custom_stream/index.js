@@ -31,7 +31,6 @@ let options_compressed = {
 //	Open a file to be red
 //
 let raw_file = fs.createReadStream('./file.txt', options_raw);
-let to_compressed_file = fs.createWriteStream('./file.gz', options_compressed);
 
 //
 //	Create our custom stream processor
@@ -66,4 +65,4 @@ OurDataManipulation.prototype._transform = function (line, encoding, processed) 
 //
 //	Pipe
 //
-raw_file.pipe(new OurDataManipulation()).pipe(to_compressed_file);
+raw_file.pipe(new OurDataManipulation());
