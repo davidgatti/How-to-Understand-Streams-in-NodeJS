@@ -19,33 +19,6 @@ let file = fs.createWriteStream('./x_file.txt', options);
 fill_the_file(file, true, 100000);
 
 //
-//	Wait for the file to be full of data.
-//
-file.on('finish', function() {
-
-	console.log('All writes are now complete.');
-
-});
-
-//
-//	Wait for the file to be closed
-//
-file.on('close', function() {
-
-	console.log('File is close');
-
-});
-
-//
-//	Wait for an error to occur.
-//
-file.on('error', function() {
-
-	console.log('There was an error');
-
-});
-
-//
 //	Function that will write data in to the file.
 //
 function fill_the_file(file, ok, size)
