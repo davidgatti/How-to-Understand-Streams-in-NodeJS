@@ -9,3 +9,7 @@ This process also illustrates how buffers work in streams. In example 1 i told y
 You could argue that you could write some code that will read or write one byte at the time. By doing so, you would create a very inefficient solution. Any interaction with the hard rive is very expensive, meaning the operating system needs to take a lot of its CPU time to just perform IO operations on the hard drive.
 
 By reading or writing in chunks, you free the system to perform some other tasks while you process what you've got. Because in this stage you are going to work with data that is in RAM, and this memory is way faster.
+
+# How to Run the Code
+
+Simply type the following command in the terminal `node index.js`.
