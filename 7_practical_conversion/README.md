@@ -9,7 +9,7 @@ In this folder you'll find the end result of what we learned in this article. He
 
 As explained in the previous example folder I told you that the previous approach is not the right one. In the `converter.js` file you see the following chunk of code that manipulates the data in a very efficient way, since we work directly with the buffer and we are not converting the data in to a temporary state.
 
-```
+```javascript
 //
 //	Loop over the buffer looking for ',' and replacing it with ';', which
 //	in ASCII ',' is 44 and ';' is 59
