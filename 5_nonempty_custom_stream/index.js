@@ -49,12 +49,12 @@ function OurDataManipulation () {
 //	shows what is the bare minimum needed to make a stream from scratch and
 //	pass the data to the next pipe.
 //
-OurDataManipulation.prototype._transform = function (line, encoding, processed) {
+OurDataManipulation.prototype._transform = function (buffer, encoding, processed) {
 
 	//
 	//	Convert the buffer in to a string
 	//
-	let x_string = line.toString();
+	let x_string = buffer.toString();
 
 	//
 	//	Split the string based on each char and store the result in to an array
