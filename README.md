@@ -28,7 +28,11 @@ The Unix `|` [pipe](https://en.wikipedia.org/wiki/Pipeline_(Unix)) is noting new
 
 In NodeJS we use Pipes inside the code to pass the result of one function to the next one. For example as seen in example 3 where we open a file, compress it and save the result in to a new file.
 
-`raw_file.pipe(gz).pipe(to_compressed_file);`
+```javascript
+raw_file
+	.pipe(gz)
+	.pipe(to_compressed_file);
+```
 
 # Combining Pipes and Streams
 
