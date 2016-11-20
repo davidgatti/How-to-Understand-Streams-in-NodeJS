@@ -1,7 +1,10 @@
+//
+// Load the modules
+//
 let fs = require('fs');
+let util = require("util");
 let stream = require('stream');
-var Transform = require("stream").Transform;
-var util = require("util");
+let Transform = require("stream").Transform;
 
 //
 //	Inherit Transform
@@ -9,11 +12,11 @@ var util = require("util");
 util.inherits(OurDataManipulation, Transform);
 
 //
-//	Options
+//	Options for the file
 //
 let options_raw = {
 	flags: 'r',
-	defaultEncoding: 'utf8',
+	defaultEncoding: 'ascii',
 	fd: null,
 	mode: 0o666,
 	autoClose: true
@@ -21,7 +24,7 @@ let options_raw = {
 
 let options_compressed = {
 	flags: 'w',
-	defaultEncoding: 'utf8',
+	defaultEncoding: 'ascii',
 	fd: null,
 	mode: 0o666,
 	autoClose: true
@@ -63,6 +66,6 @@ OurDataManipulation.prototype._transform = function (line, encoding, processed) 
 }
 
 //
-//	Pipe
+//	Pipe the data through our custom stream and then pass it to the console.
 //
-raw_file.pipe(new OurDataManipulation());
+raw_file.pipe(new OurDataManipulation()).pipe(process.stdout);

@@ -1,8 +1,14 @@
+//
+// Load the modules
+//
 let fs = require('fs');
 
+//
+//	Options for the file
+//
 let options = {
 	flags: 'r',
-	defaultEncoding: 'utf8',
+	defaultEncoding: 'ascii',
 	fd: null,
 	mode: 0o666,
 	autoClose: true

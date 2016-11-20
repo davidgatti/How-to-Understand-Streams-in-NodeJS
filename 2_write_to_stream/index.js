@@ -1,8 +1,14 @@
+//
+// Load the modules
+//
 let fs = require('fs');
 
+//
+//	Options for the file
+//
 let options = {
 	flags: 'w',
-	defaultEncoding: 'utf8',
+	defaultEncoding: 'ascii',
 	fd: null,
 	mode: 0o666,
 	autoClose: true
@@ -36,7 +42,7 @@ function fill_the_file(file, ok, size)
 		//	because write didn't write the data in the fail at the moment
 		//	of false.
 		//
-		ok = file.write("x", "utf-8");
+		ok = file.write("x", "ascii");
 
 		//
 		//	Emmit when there is nothing more to write.
@@ -55,7 +61,8 @@ function fill_the_file(file, ok, size)
 	if(size > 0)
 	{
 		//
-		//	Wait for the event
+		//	Adds a one time listener function for the drain event so we
+		//	can be notified when the buffer became empty.
 		//
 		file.once('drain', function() {
 

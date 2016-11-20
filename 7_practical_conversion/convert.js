@@ -9,7 +9,7 @@ let Transform = require("stream").Transform;
 util.inherits(OurStream, Transform);
 
 //
-//	Options
+//	Options for the file
 //
 let options_raw = {
 	flags: 'r',
@@ -19,6 +19,9 @@ let options_raw = {
 	autoClose: true
 }
 
+//
+//	Options for the file
+//
 let options_compressed = {
 	flags: 'w',
 	defaultEncoding: 'utf8',
@@ -78,4 +81,6 @@ OurStream.prototype._transform = function (buffer, encoding, callback) {
 //
 //	Pipe
 //
-raw_file.pipe(new OurStream()).pipe(to_compressed_file);
+raw_file
+	.pipe(new OurStream())
+	.pipe(to_compressed_file);

@@ -1,10 +1,15 @@
+//
+// Load the modules
+//
 let fs = require('fs');
 
+//
+//	Options for the file
+//
 let options = {
 	flags: 'r',
-	defaultEncoding: 'utf8',
+	defaultEncoding: 'ascii',
 	fd: null,
-	mode: 0o666,
 	autoClose: true
 }
 
@@ -23,10 +28,12 @@ let size = 0;
 //
 file.on('readable', function() {
 
+	console.log('-> Data available to be read')
+
 	//
 	//	Keep on reading until we get at the end of the file.
 	//
-	while(chunk = file.read(1))
+	while(chunk = file.read(2000))
 	{
 
 		//
