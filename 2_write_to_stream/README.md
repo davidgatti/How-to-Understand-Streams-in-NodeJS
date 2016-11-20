@@ -1,6 +1,6 @@
 # Write a file as a stream in NodeJS
 
-The next step is going to be a bit harder. This time we are going to write in to a stream. The function that we are going to use from FS is `.createWriteStream()` and `.write()` to write one character in to the file over and over.
+The next step is going to be a bit harder. This time we are going to write in to a stream. The function that we are going to use from [fs](https://nodejs.org/api/fs.html) is [.createWriteStream()](https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options) and [.write()](https://nodejs.org/api/fs.html#fs_fs_write_fd_data_position_encoding_callback) to write one character in to the file over and over.
 
 This process also illustrates how buffers work in streams. In example one I told you that we are going to read the data in to chunks, this time we write first in to a buffer, and only once it is full we dump it in to the hard drive.
 
