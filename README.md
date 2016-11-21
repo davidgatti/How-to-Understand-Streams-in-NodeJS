@@ -4,7 +4,7 @@ This is another article in a series of articles where I try to demystify big wor
 
 # What is a Stream
 
-Before we move to some code, lets answer the basic questions, what is a Stream... a stream is a "infinite" flow of data - period. For example, it is the opposite of an array, where an array have a predefined size. You can add new elements to an array, but you can always ask how many of them there are. Where with a stream you don't know when the data will stop flowing.
+Before we move to some code, lets answer the basic questions, what is a Stream... a stream is a "infinite" flow of data - period. For example, it is the opposite of an array, where an array have a predefined size. You can add new elements to an array, but you can always ask how many of items there are. Where with a stream you don't know when the data will stop flowing in a network environment that is. In C for example you could use [.fseek()](https://www.tutorialspoint.com/c_standard_library/c_function_fseek.htm) to find the total length of a open file, but in NodeJS this is not the case, or at least I didn't ind out a method to check the file size if open as a Stream.
 
 # If reading a file is a stream, then I know the size - right?
 
