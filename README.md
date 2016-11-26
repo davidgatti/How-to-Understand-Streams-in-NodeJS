@@ -1,4 +1,4 @@
-# Understanding Buffers in NodeJS
+# Understanding Streams in NodeJS
 
 This is another installment in my series of articles where I try to demystify big words that are used in computer programming. And the next big word that I want to tackle is the Streams concept.
 
