@@ -51,7 +51,7 @@ Basically, your laptop is just a proxy that manipulates the data and dumps the r
 
 Each folder in this repository contains a self-contained peace of code that just works. Take the time to read the README.md in each example, and don't forget to go over all of my comments. All of this in combination should give you a good understanding of what is going on.
 
-# Other
+# The End
 
 If you've enjoyed this article/project, please consider giving it a 🌟. Also check out my [GitHub account] (https://github.com/davidgatti), where I have other articles and apps that you might find interesting.
 
