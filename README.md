@@ -51,8 +51,25 @@ Basically, your laptop is just a proxy that manipulates the data and dumps the r
 
 Each folder in this repository contains a self-contained peace of code that just works. Take the time to read the README.md in each example, and don't forget to go over all of my comments. All of this in combination should give you a good understanding of what is going on.
 
-# To sum it all up
+# Other
 
-This article is part of my series that tries to demystify topics that are deemed hard, but where in truth they are just poorly explained. If you like my approach, please consider giving this repo a 🌟.
+If you've enjoyed this article/project, please consider giving it a 🌟. Also check out my [GitHub account] (https://github.com/davidgatti), where I have other articles and apps that you might find interesting.
 
-Also check out my [GitHub](https://github.com/davidgatti) account, where I have other articles and apps that you might find interesting.
+## Where to follow
+
+You can follow me on social media 🐙😇, at the following locations:
+
+- [GitHub](https://github.com/davidgatti)
+- [Twitter](https://twitter.com/dawidgatti)
+- [Instagram](https://www.instagram.com/gattidavid/)
+
+## More about me
+
+I don’t only live on GitHub, I try to do many things not to get bored 🙃. To learn more about me, you can visit the following links:
+
+- [Podcasts](http://david.gatti.pl/podcasts)
+- [Articles](http://david.gatti.pl/articles)
+- [Technical Articles](http://david.gatti.pl/technical_articles)
+- [Software Projects](http://david.gatti.pl/software_projects)
+- [Hardware Projects](http://david.gatti.pl/hardware_projects)
+
