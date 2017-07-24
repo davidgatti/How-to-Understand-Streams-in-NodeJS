@@ -6,21 +6,22 @@ This is another installment in my series of articles where I try to demystify bi
 
 Before we move on to some code, let's answer the basic questions:
 
-What is a Stream? A stream is an "infinite" flow of data that is sent in small chunks - period. For example, it's the opposite of an array, which will have a predefined size. You can add new elements to an array, but you can always ask how many items there are. With a stream, you don't know when the data will stop flowing - in a network environment, that is. In C, for example, you could use [.fseek()](https://www.tutorialspoint.com/c_standard_library/c_function_fseek.htm) to find the total length of a open file. But in NodeJS, this is not the case - at least, I haven't discovered a method to check the file size if the file was opened as a Stream.
+What is a Stream? 
+A stream is an "infinite" flow of data that is sent in small chunks - period. For example, it's the opposite of an array, which will have a predefined size. You can add new elements to an array, but you can always ask how many items there are. With a stream, you don't know when the data will stop flowing - in a network environment, that is. In C, for example, you could use [.fseek()](https://www.tutorialspoint.com/c_standard_library/c_function_fseek.htm) to find the total length of a open file. But in NodeJS, this is not the case - at least, I haven't discovered a method to check the file size if the file was opened as a Stream.
 
 # I'm reading a file as a stream, so I know the size - right?
 
 True, a file can be read as a stream or load it in to memory, but the point is that if you open it as a stream, there won't be a way to determine how big the file is.
 
-A socket is purely a stream...You don't know how much data you are going to get; the data will be buffered  by the ssytem or nettwork card until it reaches a point where the system will pass it to your code, so you can do something with it. The amount of data will depend on the network card, operating system, how fast the data is coming in, etc.
+A socket is purely a stream...You don't know how much data you are going to get; the data will be buffered by the system or network card until it reaches a point where the system will pass it to your code, so you can do something with it. The amount of data will depend on the network card, operating system, how fast the data is coming in, etc.
 
 This means that you work with just a small subset of all of the information. It's important to understand that your data will be split into pieces, and it will be up to you to recombine it into something that makes sense for your situation.
 
 For example, let's say that you want to display a full sentence: "I love the articles that David writes." But your code will get the sentence in the following way:
 
 1.	I love the
-1.	articles that Dav
-1.	id writes.
+2.	articles that Dav
+3.	id writes.
 
 Your job as a programmer will be to concatenate all of the data until you detect the `.` sign. And only then can you display the whole sentence (Read more about sockets [here](https://github.com/davidgatti/IoT-Raw-Sockets-Examples)).
 
