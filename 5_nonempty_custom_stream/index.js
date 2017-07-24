@@ -4,8 +4,8 @@ const util = require('util');
 const stream = require('stream');
 const Transform = stream.Transform;
 
-//	Options for the file
-const options_raw = {
+//	Options for the file to be read
+const read_file_options = {
 	flags: 'r',
 	defaultEncoding: 'ascii',
 	fd: null,
@@ -13,8 +13,8 @@ const options_raw = {
 	autoClose: true
 }
 
-//	Options for the compressed file
-const options_compressed = {
+//	Options for the file to be written
+const write_file_options = {
 	flags: 'w',
 	defaultEncoding: 'ascii',
 	fd: null,
@@ -22,9 +22,10 @@ const options_compressed = {
 	autoClose: true
 }
 
-//	Open a file to be red
-const raw_file = fs.createReadStream('x_file.txt', options_raw);
-const to_compressed_file = fs.createWriteStream('k_file.txt', options_compressed);
+//	Open a file to be read
+const reader_file = fs.createReadStream('x_file.txt', read_file_options);
+//	Open a file to be written
+const writer_file = fs.createWriteStream('k_file.txt', write_file_options);
 
 //	Inherit Transform
 util.inherits(OurDataManipulation, Transform);
@@ -60,6 +61,6 @@ OurDataManipulation.prototype._transform = function (buffer, encoding, processed
 }
 
 //	Pipe
-raw_file
+reader_file
 	.pipe(new OurDataManipulation())
-	.pipe(to_compressed_file);
+	.pipe(writer_file);
