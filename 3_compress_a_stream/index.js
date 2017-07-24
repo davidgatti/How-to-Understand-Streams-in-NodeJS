@@ -1,13 +1,9 @@
-//
 // Load the modules
-//
-let fs = require('fs');
-let zlib = require('zlib');
+const fs = require('fs');
+const zlib = require('zlib');
 
-//
 //	Options for the file
-//
-let options_raw = {
+const options_raw = {
 	flags: 'r',
 	defaultEncoding: 'ascii',
 	fd: null,
@@ -15,7 +11,7 @@ let options_raw = {
 	autoClose: true
 }
 
-let options_compressed = {
+const options_compressed = {
 	flags: 'w',
 	defaultEncoding: 'ascii',
 	fd: null,
@@ -23,24 +19,16 @@ let options_compressed = {
 	autoClose: true
 }
 
-//
-//	Open a file to be red
-//
-let raw_file = fs.createReadStream('./file.txt', options_raw);
+//	Open a file to be read
+const raw_file = fs.createReadStream('file.txt', options_raw);
 
-//
 //	Create a new file which will contain the compressed data
-//
-let to_compressed_file = fs.createWriteStream('./file.gz', options_compressed);
+const to_compressed_file = fs.createWriteStream('file.txt.gz', options_compressed);
 
-//
 //	Compressor
-//
-let gz = zlib.createGzip();
+const gz = zlib.createGzip();
 
-//
 //	Pipe
-//
 raw_file
 	.pipe(gz)
 	.pipe(to_compressed_file);
