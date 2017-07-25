@@ -31,13 +31,13 @@ function fill_the_file(file, ok, size)
 {
 
 	//
-	//	While the established size is bigger then zero and the buffer
+	//	While the established size is bigger than zero and the buffer
 	//	didn't fill up.
 	//
 	while(size-- && ok)
 	{
 		//
-		//	Write will set false once there is no more space to write,
+		//	'write()' method will return false once there is no more space to write,
 		//	meaning in the 'drain' event we need to set the size to + 1,
 		//	because write didn't write the data in the fail at the moment
 		//	of false.
@@ -54,7 +54,7 @@ function fill_the_file(file, ok, size)
 	}
 
 	//
-	//	If we didn't finish writing, we get hear because the buffer filled up,
+	//	If we didn't finish writing, we get here because the buffer filled up,
 	//	and the .write() method notified us to resume writing after the
 	//	'drain' event is emitted.
 	//
@@ -69,7 +69,7 @@ function fill_the_file(file, ok, size)
 			//
 			//	Resume writing
 			//
-			fill_the_file(file, true, size + 1)
+			fill_the_file(file, true, size + 1);
 
 		});
 	}
