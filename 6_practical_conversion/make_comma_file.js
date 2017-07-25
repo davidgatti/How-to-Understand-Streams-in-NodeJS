@@ -58,7 +58,7 @@ function fill_the_file(file, ok, size)
 		//	because write didn't write the data in the fail at the moment
 		//	of false.
 		//
-		ok = file.write(string, "ascii");
+		ok = file.write(string, 'ascii');
 
 		//
 		//	Emmit when there is nothing more to write.

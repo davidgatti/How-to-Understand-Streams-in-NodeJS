@@ -2,8 +2,8 @@
 
 In this folder, you'll find the end result of what we learned in this article. Here you'll find two main files:
 
-- **make_comma_file.js**: This file uses the Chance module to create a txt file of a certain size (around 300KB). The file will be filled with the following data: `Name Last Name <email@exampl.ecom>, `. We're using our previous knowledge to write some content into a file using streams.
-- **converter.js**: This file is the interesting one. We're going to take the file created using `make_comma_file.js`, and create a new one with new content. We are going to change the `,` to `;`, so the end result will look like this: `Name Last Name <email@exampl.ecom>; `.
+- **make_comma_file.js**: This file uses the Chance module to create a txt file of a certain size (around 300KB). The file will be filled with the following data: `Name Last Name <email@example.com>, `. We're using our previous knowledge to write some content into a file using streams.
+- **converter.js**: This file is the interesting one. We're going to take the file created using `make_comma_file.js`, and create a new one with new content. We are going to change the `,` to `;`, so the end result will look like this: `Name Last Name <email@example.com>; `.
 
 
 # The better approach

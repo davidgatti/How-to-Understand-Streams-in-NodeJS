@@ -1,7 +1,7 @@
 let fs = require('fs');
-let util = require("util");
+let util = require('util');
 let stream = require('stream');
-let Transform = require("stream").Transform;
+let Transform = stream.Transform;
 
 //
 //	Inherit Transform
@@ -9,9 +9,9 @@ let Transform = require("stream").Transform;
 util.inherits(OurStream, Transform);
 
 //
-//	Options for the file
+//	Options for the file to be read
 //
-let options_raw = {
+let read_file_options = {
 	flags: 'r',
 	defaultEncoding: 'utf8',
 	fd: null,
@@ -20,9 +20,9 @@ let options_raw = {
 }
 
 //
-//	Options for the file
+//	Options for the file to be written
 //
-let options_compressed = {
+let write_file_options = {
 	flags: 'w',
 	defaultEncoding: 'utf8',
 	fd: null,
@@ -31,10 +31,14 @@ let options_compressed = {
 }
 
 //
-//	Open a file to be red
+//	Open a file to be read
 //
-let raw_file = fs.createReadStream('./comma_file.txt', options_raw);
-let to_compressed_file = fs.createWriteStream('./semicolon_file.txt', options_compressed);
+let reader_file = fs.createReadStream('./comma_file.txt', read_file_options);
+
+//
+//	Open a file to be written
+//
+let writer_file = fs.createWriteStream('./semicolon_file.txt', write_file_options);
 
 //
 //	Create our custom stream processor
@@ -44,7 +48,7 @@ function OurStream () {
 	//
 	// invoke Transform constructor
 	//
-    Transform.call(this);
+  Transform.call(this);
 }
 
 //
@@ -74,13 +78,13 @@ OurStream.prototype._transform = function (buffer, encoding, callback) {
 	//
 	//	Pass the chunk of processed data to the next potential stream
 	//
-    callback();
+  callback();
 
 }
 
 //
 //	Pipe
 //
-raw_file
+reader_file
 	.pipe(new OurStream())
-	.pipe(to_compressed_file);
+	.pipe(writer_file);
