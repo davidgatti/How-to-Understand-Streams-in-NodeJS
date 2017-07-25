@@ -14,12 +14,12 @@ let options = {
 }
 
 //
-//	Open a file to be red
+//	Open a file to be read
 //
 let file = fs.createReadStream('./file.txt', options);
 
 //
-//	Create a variable that will hold the amount of bytes red
+//	Create a variable that will hold the amount of bytes read
 //
 let size = 0;
 
@@ -37,14 +37,14 @@ file.on('readable', function() {
 	{
 
 		//
-		//	Store the amount of bytes red
+		//	Store the amount of bytes read
 		//
 		size += chunk.length;
 
 		//
 		//	Display how many bytes did we get
 		//
-		console.log(`Received ${size} bytes of data.`);
+		console.log(`Received ${size/1000} bytes of data.`);
 	}
 
 });
