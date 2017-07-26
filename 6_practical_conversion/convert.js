@@ -11,7 +11,7 @@ util.inherits(OurStream, Transform);
 //
 //	Options for the file to be read
 //
-let read_file_options = {
+let options_raw = {
 	flags: 'r',
 	defaultEncoding: 'utf8',
 	fd: null,
@@ -22,7 +22,7 @@ let read_file_options = {
 //
 //	Options for the file to be written
 //
-let write_file_options = {
+let options_compressed = {
 	flags: 'w',
 	defaultEncoding: 'utf8',
 	fd: null,
@@ -33,12 +33,12 @@ let write_file_options = {
 //
 //	Open a file to be read
 //
-let reader_file = fs.createReadStream('./comma_file.txt', read_file_options);
+let raw_file = fs.createReadStream('./comma_file.txt', options_raw);
 
 //
 //	Open a file to be written
 //
-let writer_file = fs.createWriteStream('./semicolon_file.txt', write_file_options);
+let to_compressed_file = fs.createWriteStream('./semicolon_file.txt', options_compressed);
 
 //
 //	Create our custom stream processor
@@ -85,6 +85,6 @@ OurStream.prototype._transform = function (buffer, encoding, callback) {
 //
 //	Pipe
 //
-reader_file
+raw_file
 	.pipe(new OurStream())
-	.pipe(writer_file);
+	.pipe(to_compressed_file);
