@@ -14,7 +14,7 @@ util.inherits(OurDataManipulation, Transform);
 //
 //	Options for the file
 //
-let read_file_options = {
+let options_raw = {
 	flags: 'r',
 	defaultEncoding: 'ascii',
 	fd: null,
@@ -22,7 +22,7 @@ let read_file_options = {
 	autoClose: true
 }
 
-let write_file_options = {
+let options_compressed = {
 	flags: 'w',
 	defaultEncoding: 'ascii',
 	fd: null,
@@ -33,8 +33,8 @@ let write_file_options = {
 //
 //	Open a file to be read
 //
-let reader_file = fs.createReadStream('./x_file.txt', read_file_options);
-let writer_file = fs.createWriteStream('./k_file.txt', write_file_options);
+let raw_file = fs.createReadStream('./x_file.txt', options_raw);
+let to_compressed_file = fs.createWriteStream('./k_file.txt', options_compressed);
 
 //
 //	Create our custom stream processor
@@ -93,6 +93,6 @@ OurDataManipulation.prototype._transform = function (buffer, encoding, processed
 //
 //	Pipe
 //
-reader_file
+raw_file
 	.pipe(new OurDataManipulation())
-	.pipe(writer_file);
+	.pipe(to_compressed_file);
