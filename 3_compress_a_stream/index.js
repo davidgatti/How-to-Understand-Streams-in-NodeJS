@@ -24,7 +24,7 @@ let options_compressed = {
 }
 
 //
-//	Open a file to be red
+//	Open a file to be read
 //
 let raw_file = fs.createReadStream('./file.txt', options_raw);
 
