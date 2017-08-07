@@ -48,7 +48,7 @@ function OurStream () {
 	//
 	// invoke Transform constructor
 	//
-  Transform.call(this);
+    Transform.call(this);
 }
 
 //
@@ -78,7 +78,7 @@ OurStream.prototype._transform = function (buffer, encoding, callback) {
 	//
 	//	Pass the chunk of processed data to the next potential stream
 	//
-  callback();
+    callback();
 
 }
 
