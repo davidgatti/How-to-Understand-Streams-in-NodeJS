@@ -44,7 +44,7 @@ function OurDataManipulation () {
 	//
 	// invoke Transform constructor
 	//
-  Transform.call(this);
+    Transform.call(this);
 }
 
 //
@@ -86,7 +86,7 @@ OurDataManipulation.prototype._transform = function (buffer, encoding, processed
 	//
 	//	We let system know that we finished processing the data.
 	//
-  processed();
+    processed();
 
 }
 
