@@ -8,7 +8,7 @@ This process also illustrates how buffers work in streams. In Example 1, I told 
 
 You could argue that you could create computer code that will read or write one byte at a time. But by doing so, you would create a very inefficient solution. Any interaction with the hard drive is very expensive, meaning that the operating system needs to take a lot of its CPU time to just perform IO operations.
 
-By reading or writing in chunks, you free the system to perform some other tasks while you process what you've got. In this stage, you're going to work with data that is in RAM, and this memory is much faster.
+By reading or writing in chunks, you free the system to perform some other tasks while you process what you've got. In this stage, you're going to work with data that is in the RAM, and this memory is much faster.
 
 # How to Run the Code
 
