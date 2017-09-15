@@ -1,7 +1,7 @@
 let fs = require('fs');
-let util = require("util");
+let util = require('util');
 let stream = require('stream');
-let Transform = require("stream").Transform;
+let Transform = stream.Transform;
 
 //
 //	Inherit Transform
@@ -9,7 +9,7 @@ let Transform = require("stream").Transform;
 util.inherits(OurStream, Transform);
 
 //
-//	Options for the file
+//	Options for the file to be read
 //
 let options_raw = {
 	flags: 'r',
@@ -20,7 +20,7 @@ let options_raw = {
 }
 
 //
-//	Options for the file
+//	Options for the file to be written
 //
 let options_compressed = {
 	flags: 'w',
@@ -31,9 +31,13 @@ let options_compressed = {
 }
 
 //
-//	Open a file to be red
+//	Open a file to be read
 //
 let raw_file = fs.createReadStream('./comma_file.txt', options_raw);
+
+//
+//	Open a file to be written
+//
 let to_compressed_file = fs.createWriteStream('./semicolon_file.txt', options_compressed);
 
 //
