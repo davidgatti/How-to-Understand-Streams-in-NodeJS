@@ -2,9 +2,9 @@
 // Load the modules
 //
 let fs = require('fs');
-let util = require("util");
+let util = require('util');
 let stream = require('stream');
-let Transform = require("stream").Transform;
+let Transform = stream.Transform;
 
 //
 //	Inherit Transform
@@ -31,7 +31,7 @@ let options_compressed = {
 }
 
 //
-//	Open a file to be red
+//	Open a file to be read
 //
 let raw_file = fs.createReadStream('./x_file.txt', options_raw);
 let to_compressed_file = fs.createWriteStream('./k_file.txt', options_compressed);
@@ -62,21 +62,21 @@ OurDataManipulation.prototype._transform = function (buffer, encoding, processed
 	//
 	//	Split the string based on each char and store the result in to an array
 	//
-	let array = x_string.split("");
+	let array = x_string.split('');
 
 	//
 	//	Loop over the array and replace each X with a K
 	//
 	array.forEach(function(data, index) {
 
-		array[index] = "k";
+		array[index] = 'k';
 
 	});
 
 	//
 	//	Join the converted array back in to a string.
 	//
-	let k_string = array.join("");
+	let k_string = array.join('');
 
 	//
 	//	Add the data that came in, to the output stream
