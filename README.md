@@ -49,7 +49,7 @@ Basically, your laptop is just a proxy that manipulates the data and dumps the r
 
 # Code Break Down
 
-Each folder in this repository contains a self-contained peace of code that just works. Take the time to read the README.md in each example, and don't forget to go over all of my comments. All of this in combination should give you a good understanding of what is going on.
+Each folder in this repository contains a self-contained piece of code that just works. Take the time to read the README.md in each example, and don't forget to go over all of my comments. All of this in combination should give you a good understanding of what is going on.
 
 # The End
 
