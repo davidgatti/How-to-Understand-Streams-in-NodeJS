@@ -13,7 +13,7 @@ A stream is an "infinite" flow of data that is sent in small chunks - period. Fo
 
 True, a file can be read as a stream or load it in to memory, but the point is that if you open it as a stream, there won't be a way to determine how big the file is.
 
-A socket is purely a stream...You don't know how much data you are going to get; the data will be buffered by the system or network card until it reaches a point where the system will pass it to your code, so you can do something with it. The amount of data will depend on the network card, operating system, how fast the data is coming in, etc.
+A socket is purely a stream...You don't know how much data you are going to get; the data will be "buffered"[**](#what-is-buffering?) by the system or network card until it reaches a point where the system will pass it to your code, so you can do something with it. The amount of data will depend on the network card, operating system, how fast the data is coming in, etc. 
 
 This means that you work with just a small subset of all of the information. It's important to understand that your data will be split into pieces, and it will be up to you to recombine it into something that makes sense for your situation.
 
@@ -58,3 +58,9 @@ If you enjoyed this project, please consider giving it a 🌟. And check out my 
 ## Sponsor 🎊
 
 This project is brought to you by 0x4447 LLC, a software company specializing in building custom solutions on top of AWS. Follow this link to learn more: https://0x4447.com. Alternatively, send an email to [hello@0x4447.email](mailto:hello@0x4447.email?Subject=Hello%20From%20Repo&Body=Hi%2C%0A%0AMy%20name%20is%20NAME%2C%20and%20I%27d%20like%20to%20get%20in%20touch%20with%20someone%20at%200x4447.%0A%0AI%27d%20like%20to%20discuss%20the%20following%20topics%3A%0A%0A-%20LIST_OF_TOPICS_TO_DISCUSS%0A%0ASome%20useful%20information%3A%0A%0A-%20My%20full%20name%20is%3A%20FIRST_NAME%20LAST_NAME%0A-%20My%20time%20zone%20is%3A%20TIME_ZONE%0A-%20My%20working%20hours%20are%20from%3A%20TIME%20till%20TIME%0A-%20My%20company%20name%20is%3A%20COMPANY%20NAME%0A-%20My%20company%20website%20is%3A%20https%3A%2F%2F%0A%0ABest%20regards.).
+
+## Footnotes
+
+### What is buffering?
+
+Ever watched a video over a slow internet connection WITHOUT buffering? It constantly starts and stops: the user experience is terrible! If there is any sort of hold-up in delivering any video data to you - the video stops playing. To avoid this problem, people learned that they could download a "buffer" of 2 minutes of video, in front of your current playing position, before letting the video start playing. Now, if video data is delayed, the video will continue to play, because you will constantly have 2 minutes of video always saved, ahead of time. You have a "buffer".
