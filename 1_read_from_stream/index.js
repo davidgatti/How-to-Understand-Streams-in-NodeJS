@@ -14,17 +14,17 @@ let options = {
 }
 
 //
-//	Open a file to be red
+//	Open a file to be read
 //
 let file = fs.createReadStream('./file.txt', options);
 
 //
-//	Create a variable that will hold the amount of bytes red
+//	Create a variable that will hold the amount of bytes read
 //
 let size = 0;
 
 //
-//	Red the first set of the available buffer
+//	Read the first set of the available buffer
 //
 file.on('readable', function() {
 
@@ -37,7 +37,7 @@ file.on('readable', function() {
 	{
 
 		//
-		//	Store the amount of bytes red
+		//	Store the amount of bytes read
 		//
 		size += chunk.length;
 
